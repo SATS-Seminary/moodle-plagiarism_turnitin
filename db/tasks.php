@@ -14,21 +14,18 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-$capabilities = array(
-    'plagiarism/turnitin:enable' => array(
-        'captype' => 'write',
-        'contextlevel' => CONTEXT_COURSE,
-         'legacy' => array(
-         'editingteacher' => CAP_ALLOW,
-         'manager' => CAP_ALLOW
-        )
-    ),
-    'plagiarism/turnitin:viewfullreport' => array(
-        'captype' => 'read',
-        'contextlevel' => CONTEXT_COURSE,
-         'legacy' => array(
-         'editingteacher' => CAP_ALLOW,
-         'manager' => CAP_ALLOW
-        )
-    ),
+/**
+ * @package plagiarism_turnitin
+ */
+
+$tasks = array(
+    array(
+        'classname' => 'plagiarism_turnitin\task\plagiarism_turnitin_task',
+        'blocking' => 0,
+        'minute' => '*/5',
+        'hour' => '*',
+        'day' => '*',
+        'dayofweek' => '*',
+        'month' => '*'
+    )
 );
